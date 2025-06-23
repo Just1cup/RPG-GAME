@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "howl": "^0.2.0",
-    "howler": "^2.2.4"
-  },
-  "devDependencies": {
-    "@types/howler": "^2.2.12"
-  }
-}

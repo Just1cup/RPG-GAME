@@ -5,7 +5,7 @@ interface Spell {
 }
 
 function playBackgroundMusic() {
-  const audio = new Audio("loop.mp3"); 
+  const audio = new Audio("assets/song.mp3"); 
   audio.loop = true;    
   audio.volume = 0.3;  
   audio.play().catch((err) => {

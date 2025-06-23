@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo de Turnos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
+    <div id="game" class="w-full max-w-xl p-6 bg-gray-800 rounded-lg shadow-lg">
+      <h1 class="text-3xl font-bold text-center mb-4">Jogo de Turnos</h1>
+
+      <div id="status" class="text-sm space-y-2 bg-gray-700 p-4 rounded mb-4">
+        <!-- Status do jogo será atualizado aqui -->
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <button class="btn bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded" onclick="playerAttack()">Atacar</button>
+        <button class="btn bg-purple-600 hover:bg-purple-700 py-2 px-4 rounded" onclick="playerMagic()">Magia</button>
+        <button class="btn bg-green-600 hover:bg-green-700 py-2 px-4 rounded" onclick="playerRest()">Descansar</button>
+        <button class="btn bg-red-600 hover:bg-red-700 py-2 px-4 rounded" onclick="playerFlee()">Fugir</button>
+      </div>
+
+      <div class="space-y-2 mb-4">
+        <div class="bg-gray-600 rounded h-6 overflow-hidden">
+          <div id="player-health-bar" class="bg-red-500 h-full w-full transition-all">100/100</div>
+        </div>
+        <div class="bg-gray-600 rounded h-6 overflow-hidden">
+          <div id="player-stamina-bar" class="bg-yellow-500 h-full w-full transition-all"></div>
+        </div>
+      </div>
+
+      <div id="log" class="bg-gray-700 p-4 rounded h-52 overflow-y-auto text-sm">
+        <!-- Log de ações aparecerá aqui -->
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+    <script></script>
+
+  </body>
+</html>

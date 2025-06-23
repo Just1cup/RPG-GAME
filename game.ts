@@ -5,22 +5,20 @@ interface Spell {
 }
 
 function playBackgroundMusic() {
-  const audio = new Audio("assets/loop.mp3"); // caminho relativo ao index.html
-  audio.loop = true;    // ativa o loop infinito
-  audio.volume = 0.3;   // volume entre 0.0 e 1.0
+  const audio = new Audio("assets/loop.mp3"); 
+  audio.loop = true;    
+  audio.volume = 0.3;  
   audio.play().catch((err) => {
     console.warn("Não foi possível tocar a música automaticamente:", err);
-    // Pode ser necessário tocar após interação do usuário (clique)
+ 
   });
   return audio;
 }
 
-// Chame essa função quando quiser iniciar a música (por exemplo, no começo do jogo)
+
 const bgMusic = playBackgroundMusic();
-// Função para desabilitar os botões (quando o player morrer)
 
 
-// Função para habilitar botões (quando reiniciar)
 
 
 function resetGame() {
@@ -71,8 +69,8 @@ let player = {
 let enemy = createEnemy();
 
 function createEnemy() {
-  const level = player.level + Math.floor(Math.random() * 6); // até +5 níveis
-  const hp = 30 + level * (10 + Math.floor(Math.random() * 21)); // HP entre 30 a 130+ por nível
+  const level = player.level + Math.floor(Math.random() * 6); // 0 até 5
+  const hp = 30 + level * (10 + Math.floor(Math.random() * 21)); // 0 até 20
   const stamina = 50;
   const spells = [...magicList].sort(() => 0.5 - Math.random()).slice(0, 2);
   return { hp, maxHp: hp, stamina, level, spells };
@@ -119,14 +117,13 @@ function nextEnemy() {
   enemy = createEnemy();
   player.level++;
 
-  // Recuperar 33% da vida faltante ao subir de nível
+
   const missingHp = player.maxHp - player.hp;
   const recoverHp = Math.floor(missingHp * 0.33);
   player.hp = Math.min(player.hp + recoverHp, player.maxHp);
 
-  // A cada 10 níveis, o jogador ganha +25 de vida, ou pode rolar para +25 a +50
+
   if (player.level % 10 === 0) {
-    // Aqui deixei a escolha manual via prompt, mas pode trocar para automático
     const choice = prompt(
       `Você chegou no nível ${player.level}! Deseja receber +25 de vida (digite 1) ou rolar para ganhar entre 25 e 50 (digite 2)?`
     );
@@ -142,7 +139,6 @@ function nextEnemy() {
       log(`🎉 Você ganhou +25 de vida máxima!`);
     }
 
-    // Garantir que vida atual não ultrapasse o máximo
     if (player.hp > player.maxHp) player.hp = player.maxHp;
   }
 
@@ -184,14 +180,12 @@ function nextEnemy() {
 };
 
 (window as any).playerRest = function playerRest() {
-  // Cura aleatória entre 10% e 25%
   const minRecover = Math.floor(player.maxHp * 0.1);
   const maxRecover = Math.floor(player.maxHp * 0.25);
   const recoveredHP = minRecover + Math.floor(Math.random() * (maxRecover - minRecover + 1));
 
   player.hp = Math.min(player.hp + recoveredHP, player.maxHp);
 
-  // Recupera estamina (fixo 6%)
   const recoveredStamina = Math.floor(player.maxStamina * 0.06);
   player.stamina = Math.min(player.stamina + recoveredStamina, player.maxStamina);
 

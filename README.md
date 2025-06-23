@@ -24,7 +24,7 @@ A simple but expandable turn-based RPG battle system built with **TypeScript**, 
 - **HTML** – Page structure
 - **Tailwind CSS** – Styling
 - **Vanilla JavaScript Audio API** – Background music
-- **No frameworks** – Lightweight and easy to understand
+- **No frameworks** – Lightweight and easy to understand, despite that, you may find some Howler dependencies, but it still will be removed latter on. 
 
 ---
 

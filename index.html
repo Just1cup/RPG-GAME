@@ -15,10 +15,10 @@
       </div>
 
       <div class="grid grid-cols-2 gap-4 mb-4">
-        <button class="btn bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded" onclick="playerAttack()">Atacar</button>
-        <button class="btn bg-purple-600 hover:bg-purple-700 py-2 px-4 rounded" onclick="playerMagic()">Magia</button>
-        <button class="btn bg-green-600 hover:bg-green-700 py-2 px-4 rounded" onclick="playerRest()">Descansar</button>
-        <button class="btn bg-red-600 hover:bg-red-700 py-2 px-4 rounded" onclick="playerFlee()">Fugir</button>
+        <button class="btn bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed" data-action="attack">Atacar</button>
+        <button class="btn bg-purple-600 hover:bg-purple-700 py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed" data-action="magic">Magia</button>
+        <button class="btn bg-green-600 hover:bg-green-700 py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed" data-action="rest">Descansar</button>
+        <button class="btn bg-red-600 hover:bg-red-700 py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed" data-action="flee">Fugir</button>
       </div>
 
       <div class="space-y-2 mb-4">
@@ -35,8 +35,7 @@
       </div>
     </div>
 
-    <script src="game.js"></script>
-    <script></script>
+    <script type="module" src="/src/main.ts"></script>
 
   </body>
 </html>
